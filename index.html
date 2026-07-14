@@ -64,29 +64,30 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: var(--font-title);
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            text-decoration: none;
-            letter-spacing: -0.5px;
+        /* Reemplazamos el texto del logo por la imagen en miniatura */
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            height: 40px;
         }
 
-        .logo span {
-            color: var(--accent-green);
+        .logo-nav img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-menu {
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-link {
@@ -101,11 +102,11 @@
             color: var(--accent-green);
         }
 
-        /* --- SECCIÓN HERO (PORTADA) --- */
+        /* --- SECCIÓN HERO (PORTADA CON LOGO PROTAGONISTA) --- */
         .hero {
-            padding: 180px 2rem 100px;
-            background: radial-gradient(circle at 80% 20%, rgba(79, 112, 156, 0.08) 0%, rgba(255, 255, 255, 1) 70%);
-            min-height: 90vh;
+            padding: 160px 2rem 100px;
+            background: radial-gradient(circle at 50% 30%, rgba(79, 112, 156, 0.08) 0%, rgba(255, 255, 255, 1) 70%);
+            min-height: 95vh;
             display: flex;
             align-items: center;
         }
@@ -114,13 +115,33 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 4rem;
             align-items: center;
         }
 
+        .hero-content {
+            text-align: left;
+        }
+
+        /* Estilo para el gran logotipo protagonista */
+        .brand-logo-main {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+
+        @keyframes floatLogo {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             line-height: 1.15;
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
@@ -375,7 +396,7 @@
             color: #495057;
         }
 
-        /* --- NUEVO MARCO DE EXHIBICIÓN DE LA ETIQUETA --- */
+        /* --- MARCO DE EXHIBICIÓN DE LA ETIQUETA --- */
         .prod-media {
             display: flex;
             justify-content: center;
@@ -384,11 +405,10 @@
             width: 100%;
         }
 
-        /* Tarjeta contenedora con la proporción ideal para la etiqueta rectangular */
         .label-frame-container {
             width: 100%;
             max-width: 440px;
-            aspect-ratio: 1.2 / 1; /* Relación de aspecto más natural para etiquetas rectangulares */
+            aspect-ratio: 1.2 / 1;
             border-radius: 20px;
             background-color: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.06);
@@ -402,7 +422,6 @@
             overflow: hidden;
         }
 
-        /* Sellos flotantes integrados de manera fija */
         .floating-badge {
             position: absolute;
             top: 15px;
@@ -420,12 +439,10 @@
             transition: var(--transition-smooth);
         }
 
-        /* Colores específicos del sello flotante */
         .badge-andes { background-color: var(--color-andes); }
         .badge-frost { background-color: var(--color-frost); }
         .badge-wild { background-color: var(--color-wild); }
 
-        /* Contenedor del marcador de respaldo (cuando no hay imagen física) */
         .label-fallback {
             display: flex;
             flex-direction: column;
@@ -442,19 +459,17 @@
             color: var(--primary-dark);
         }
 
-        /* Imagen real de la etiqueta de la botella */
         .actual-label-img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            display: none; /* Se activa mediante JS si la imagen existe */
+            display: none;
             z-index: 5;
             transition: var(--transition-smooth);
         }
 
-        /* Fondos decorativos sutiles basados en el sabor de cada bebida */
         .bg-andes-subtle { background: radial-gradient(circle, rgba(244, 209, 96, 0.12) 0%, rgba(255, 255, 255, 1) 85%); }
         .bg-frost-subtle { background: radial-gradient(circle, rgba(168, 218, 220, 0.18) 0%, rgba(255, 255, 255, 1) 85%); }
         .bg-wild-subtle { background: radial-gradient(circle, rgba(176, 125, 98, 0.12) 0%, rgba(255, 255, 255, 1) 85%); }
@@ -541,10 +556,11 @@
                 gap: 3rem;
             }
 
+            .brand-logo-main { margin: 0 auto 1.5rem; }
             .hero-content h1 { font-size: 2.5rem; }
             .hero-content p { margin: 0 auto 2.5rem; }
             .image-placeholder { margin: 0 auto; }
-            .nav-menu { display: none; } /* Oculto para simplificar */
+            .nav-menu { display: none; }
             
             .product-display { padding: 2.5rem 1.5rem; }
             .ingredients-box { text-align: left; }
@@ -557,7 +573,10 @@
     <!-- Menú de Navegación -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">VERTEX<span>ENERGY</span></a>
+            <!-- Miniatura del logotipo en la barra de navegación -->
+            <a href="#" class="logo-nav">
+                <img src="Vertex.png" alt="Vertex Energy Logo">
+            </a>
             <ul class="nav-menu">
                 <li><a href="#" class="nav-link">Inicio</a></li>
                 <li><a href="#como-se-logro" class="nav-link">¿Cómo se logró?</a></li>
@@ -567,10 +586,13 @@
         </div>
     </header>
 
-    <!-- Sección de Portada (Hero) -->
+    <!-- Sección de Portada (Hero con Logotipo Protagonista) -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <!-- Logotipo integrado estratégicamente antes del título principal -->
+                <img src="Vertex.png" alt="Vertex Energy Logo" class="brand-logo-main">
+                
                 <h1>Innovación y Energía que Revalorizan los Andes</h1>
                 <p>En Vertex Energy fusionamos la ciencia, la economía circular y la riqueza natural andina para crear soluciones nutricionales de alto impacto social y ambiental.</p>
                 <a href="#como-se-logro" class="cta-btn">Conocer Suero-Nutri</a>
@@ -588,7 +610,7 @@
         </div>
     </section>
 
-    <!-- Sección ¿Cómo se logró? (Historia del Proyecto) -->
+    <!-- Sección ¿Cómo se logró? -->
     <section class="story" id="como-se-logro">
         <div class="story-container">
             <span class="story-badge">El Origen</span>
@@ -612,7 +634,7 @@
         </div>
     </section>
 
-    <!-- Sección Suero-Nutri (Ingredientes de las Bebidas) -->
+    <!-- Sección Suero-Nutri (Productos) -->
     <section class="products-section" id="suero-nutri">
         <div class="products-container">
             <h2 class="section-title" style="margin-bottom: 1.5rem;">La Línea <span>Suero-Nutri</span></h2>
@@ -620,23 +642,18 @@
                 Explora el poder y el sabor de cada una de nuestras tres variedades inspiradas en la riqueza andina.
             </p>
 
-            <!-- Pestañas de Navegación Interactivas -->
+            <!-- Pestañas de Selección -->
             <div class="tabs-container">
                 <button class="tab-btn active" data-product="andes">ANDES</button>
                 <button class="tab-btn" data-product="frost">FROST</button>
                 <button class="tab-btn" data-product="wild">WILD</button>
             </div>
 
-            <!-- CONTENIDO DINÁMICO DE PRODUCTOS -->
-            
             <!-- Producto 1: Andes -->
             <div class="product-display active" id="prod-andes">
                 <div class="prod-media">
                     <div class="label-frame-container bg-andes-subtle" id="container-andes">
-                        <!-- El Sello de Naranja/Aguaymanto siempre presente y visible -->
                         <div class="floating-badge badge-andes">🍊</div>
-                        
-                        <!-- Texto instructivo que solo se muestra si NO está cargada andes.png -->
                         <div class="label-fallback" id="fallback-andes">
                             <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>andes.png</strong> aquí</span>
                         </div>
@@ -658,10 +675,7 @@
             <div class="product-display" id="prod-frost">
                 <div class="prod-media">
                     <div class="label-frame-container bg-frost-subtle" id="container-frost">
-                        <!-- Sello de la hoja de Muña siempre visible -->
                         <div class="floating-badge badge-frost">🍃</div>
-                        
-                        <!-- Texto instructivo de respaldo -->
                         <div class="label-fallback" id="fallback-frost">
                             <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>frost.png</strong> aquí</span>
                         </div>
@@ -683,10 +697,7 @@
             <div class="product-display" id="prod-wild">
                 <div class="prod-media">
                     <div class="label-frame-container bg-wild-subtle" id="container-wild">
-                        <!-- Sello de la abeja siempre visible -->
                         <div class="floating-badge badge-wild">🐝</div>
-                        
-                        <!-- Texto instructivo de respaldo -->
                         <div class="label-fallback" id="fallback-wild">
                             <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>wild.png</strong> aquí</span>
                         </div>
@@ -707,7 +718,7 @@
         </div>
     </section>
 
-    <!-- Sección de Sostenibilidad -->
+    <!-- Sostenibilidad -->
     <section class="features" id="sostenibilidad">
         <h2 class="section-title">Pilares de <span>Sostenibilidad</span></h2>
         <div class="features-grid">
@@ -736,7 +747,7 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // --- 1. LÓGICA DE INTERACTIVIDAD DE PESTAÑAS (BEBIDAS) ---
+        // --- 1. INTERACTIVIDAD DE PESTAÑAS (BEBIDAS) ---
         const tabs = document.querySelectorAll('.tab-btn');
         const displays = document.querySelectorAll('.product-display');
 
@@ -752,23 +763,22 @@
             });
         });
 
-        // --- 2. DETECCIÓN AUTOMÁTICA DE LAS IMÁGENES DE LAS ETIQUETAS ---
+        // --- 2. DETECCIÓN AUTOMÁTICA DE IMÁGENES ---
         function setupImageDetection(imgId, fallbackId) {
             const img = document.getElementById(imgId);
             const fallback = document.getElementById(fallbackId);
 
             img.onload = function() {
-                fallback.style.display = 'none'; // Esconde el marcador de posición de texto
-                img.style.display = 'block';     // Muestra la imagen real de tu etiqueta rectangular
+                fallback.style.display = 'none';
+                img.style.display = 'block';
             };
         }
 
-        // Ejecutar detección para cada uno de los 3 productos
         setupImageDetection('img-andes', 'fallback-andes');
         setupImageDetection('img-frost', 'fallback-frost');
         setupImageDetection('img-wild', 'fallback-wild');
 
-        // Imagen de portada principal
+        // Imagen de portada
         const mainImg = document.getElementById('productImg');
         const mainIcon = document.getElementById('placeholderIcon');
         const mainText = document.getElementById('placeholderText');
