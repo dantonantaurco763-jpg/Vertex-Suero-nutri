@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <style>
         /* --- VARIABLES DE DISEÑO --- */
         :root {
@@ -18,12 +18,12 @@
             --bg-light: #f8f9fa;       /* Fondo gris limpio */
             --text-dark: #212529;      /* Texto principal */
             --text-muted: #6c757d;     /* Texto secundario */
-            
+
             /* Colores temáticos de las bebidas de tus etiquetas */
             --color-andes: #f4d160;    /* Amarillo Aguaymanto */
             --color-frost: #a8dadc;    /* Azul/Celeste Muña */
             --color-wild: #b07d62;     /* Marrón/Miel rústico */
-            
+
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Open Sans', sans-serif;
             --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -36,18 +36,31 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
             background-color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         h1, h2, h3 {
             font-family: var(--font-title);
             color: var(--primary-dark);
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent-green);
+            outline-offset: 3px;
+        }
+
+        img {
+            max-width: 100%;
         }
 
         /* --- HEADER & NAVEGACIÓN --- */
@@ -83,6 +96,16 @@
             object-fit: contain;
         }
 
+        /* Texto de respaldo si el logo aún no se ha añadido */
+        .logo-nav .logo-fallback-text {
+            display: none;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+        }
+
         .nav-menu {
             display: flex;
             gap: 2rem;
@@ -101,6 +124,31 @@
         .nav-link:hover {
             color: var(--accent-green);
         }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-dark);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         /* --- SECCIÓN HERO (PORTADA CON LOGO PROTAGONISTA) --- */
         .hero {
@@ -165,6 +213,8 @@
             font-family: var(--font-title);
             font-weight: 600;
             font-size: 1rem;
+            border: none;
+            cursor: pointer;
             box-shadow: 0 10px 20px rgba(45, 122, 76, 0.2);
             transition: var(--transition-smooth);
         }
@@ -215,6 +265,108 @@
             margin-bottom: 1.5rem;
             fill: var(--primary-light);
             opacity: 0.7;
+        }
+
+        /* --- SECCIÓN ANUNCIO / FICHA TÉCNICA (ANDES PILOTO) --- */
+        .pilot-ad {
+            padding: 100px 2rem;
+            background: linear-gradient(180deg, #ffffff 0%, #fbf8ef 100%);
+        }
+
+        .pilot-ad-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pilot-ad-header {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .pilot-ad-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-top: 1rem;
+        }
+
+        .pilot-ad-frame {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(15, 44, 89, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            cursor: zoom-in;
+        }
+
+        .pilot-ad-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: var(--transition-smooth);
+        }
+
+        .pilot-ad-frame:hover img {
+            transform: scale(1.015);
+        }
+
+        .pilot-ad-zoom-hint {
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            background-color: rgba(15, 44, 89, 0.85);
+            color: white;
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+        }
+
+        .pilot-ad-caption {
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Lightbox para ver la ficha técnica a detalle */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(15, 20, 30, 0.92);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 92vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.2rem;
+            line-height: 1;
+            cursor: pointer;
+            font-family: var(--font-title);
         }
 
         /* --- SECCIÓN HISTORIA (CÓMO SE LOGRÓ) --- */
@@ -297,6 +449,7 @@
             justify-content: center;
             gap: 1rem;
             margin-bottom: 3.5rem;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
@@ -560,11 +713,52 @@
             .hero-content h1 { font-size: 2.5rem; }
             .hero-content p { margin: 0 auto 2.5rem; }
             .image-placeholder { margin: 0 auto; }
-            .nav-menu { display: none; }
-            
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-menu .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .pilot-ad { padding: 70px 1.25rem; }
+            .pilot-ad-zoom-hint { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+
             .product-display { padding: 2.5rem 1.5rem; }
             .ingredients-box { text-align: left; }
             .label-frame-container { margin: 0 auto; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
@@ -574,11 +768,16 @@
     <header>
         <div class="nav-container">
             <!-- Miniatura del logotipo en la barra de navegación -->
-            <a href="#" class="logo-nav">
-                <img src="Vertex.png" alt="Vertex Energy Logo">
+            <a href="#inicio" class="logo-nav">
+                <img src="Vertex.png" alt="Vertex Energy Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-fallback-text">Vertex Energy</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link">Inicio</a></li>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#ficha-tecnica" class="nav-link">Ficha Técnica</a></li>
                 <li><a href="#como-se-logro" class="nav-link">¿Cómo se logró?</a></li>
                 <li><a href="#suero-nutri" class="nav-link">Suero-Nutri</a></li>
                 <li><a href="#sostenibilidad" class="nav-link">Sostenibilidad</a></li>
@@ -587,17 +786,17 @@
     </header>
 
     <!-- Sección de Portada (Hero con Logotipo Protagonista) -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="hero-container">
             <div class="hero-content">
                 <!-- Logotipo integrado estratégicamente antes del título principal -->
-                <img src="Vertex.png" alt="Vertex Energy Logo" class="brand-logo-main">
-                
+                <img src="Vertex.png" alt="Vertex Energy Logo" class="brand-logo-main" onerror="this.style.display='none';">
+
                 <h1>Innovación y Energía que Revalorizan los Andes</h1>
                 <p>En Vertex Energy fusionamos la ciencia, la economía circular y la riqueza natural andina para crear soluciones nutricionales de alto impacto social y ambiental.</p>
-                <a href="#como-se-logro" class="cta-btn">Conocer Suero-Nutri</a>
+                <a href="#ficha-tecnica" class="cta-btn">Conocer Suero-Nutri</a>
             </div>
-            
+
             <div class="hero-visual">
                 <div class="image-placeholder" id="imageContainer">
                     <svg viewBox="0 0 24 24" id="placeholderIcon">
@@ -609,6 +808,29 @@
             </div>
         </div>
     </section>
+
+    <!-- Sección Anuncio / Ficha Técnica: pieza publicitaria de Andes a tamaño completo -->
+    <section class="pilot-ad" id="ficha-tecnica">
+        <div class="pilot-ad-container">
+            <div class="pilot-ad-header">
+                <span class="story-badge">Versión Piloto</span>
+                <h2>Cada detalle de Andes, a la vista</h2>
+                <p>Desde el origen del lactosuero hasta la mezcla final: así construimos nuestra primera bebida energizante láctea con aguaymanto y muña.</p>
+            </div>
+
+            <div class="pilot-ad-frame" id="pilotAdFrame" role="button" tabindex="0" aria-label="Ampliar ficha técnica de Andes">
+                <img src="andes-piloto.png" alt="Ficha técnica de Suero-Nutri Andes: composición (70% base láctea, 22% extracto de aguaymanto, 8% infusión de muña, miel de abeja de Chiquián) y proceso de elaboración en 4 pasos.">
+                <span class="pilot-ad-zoom-hint">🔍 Ver a detalle</span>
+            </div>
+            <p class="pilot-ad-caption">Toca o haz clic en la imagen para explorar cada cifra y paso del proceso.</p>
+        </div>
+    </section>
+
+    <!-- Lightbox para ver la ficha técnica en tamaño completo -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+        <img src="andes-piloto.png" alt="Ficha técnica de Suero-Nutri Andes ampliada">
+    </div>
 
     <!-- Sección ¿Cómo se logró? -->
     <section class="story" id="como-se-logro">
@@ -643,10 +865,10 @@
             </p>
 
             <!-- Pestañas de Selección -->
-            <div class="tabs-container">
-                <button class="tab-btn active" data-product="andes">ANDES</button>
-                <button class="tab-btn" data-product="frost">FROST</button>
-                <button class="tab-btn" data-product="wild">WILD</button>
+            <div class="tabs-container" role="tablist">
+                <button class="tab-btn active" data-product="andes" role="tab" aria-selected="true">ANDES</button>
+                <button class="tab-btn" data-product="frost" role="tab" aria-selected="false">FROST</button>
+                <button class="tab-btn" data-product="wild" role="tab" aria-selected="false">WILD</button>
             </div>
 
             <!-- Producto 1: Andes -->
@@ -753,11 +975,12 @@
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
+                tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
                 displays.forEach(d => d.classList.remove('active'));
 
                 tab.classList.add('active');
-                
+                tab.setAttribute('aria-selected', 'true');
+
                 const targetProduct = tab.getAttribute('data-product');
                 document.getElementById(`prod-${targetProduct}`).classList.add('active');
             });
@@ -792,6 +1015,55 @@
             mainContainer.style.boxShadow = 'none';
             mainImg.style.display = 'block';
         };
+
+        // --- 3. MENÚ MÓVIL ---
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // --- 4. LIGHTBOX DE LA FICHA TÉCNICA (ANUNCIO ANDES) ---
+        const pilotAdFrame = document.getElementById('pilotAdFrame');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        function openLightbox() {
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        pilotAdFrame.addEventListener('click', openLightbox);
+        pilotAdFrame.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox();
+            }
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
     </script>
 </body>
 </html>
