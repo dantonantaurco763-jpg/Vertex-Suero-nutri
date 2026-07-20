@@ -83,7 +83,6 @@
             align-items: center;
         }
 
-        /* Reemplazamos el texto del logo por la imagen en miniatura */
         .logo-nav {
             display: flex;
             align-items: center;
@@ -96,7 +95,6 @@
             object-fit: contain;
         }
 
-        /* Texto de respaldo si el logo aún no se ha añadido */
         .logo-nav .logo-fallback-text {
             display: none;
             font-family: var(--font-title);
@@ -150,7 +148,7 @@
         .nav-toggle.open span:nth-child(2) { opacity: 0; }
         .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        /* --- SECCIÓN HERO (PORTADA CON LOGO PROTAGONISTA) --- */
+        /* --- SECCIÓN HERO --- */
         .hero {
             padding: 160px 2rem 100px;
             background: radial-gradient(circle at 50% 30%, rgba(79, 112, 156, 0.08) 0%, rgba(255, 255, 255, 1) 70%);
@@ -172,7 +170,6 @@
             text-align: left;
         }
 
-        /* Estilo para el gran logotipo protagonista */
         .brand-logo-main {
             max-width: 280px;
             width: 100%;
@@ -225,7 +222,6 @@
             background-color: #24613c;
         }
 
-        /* Contenedor de la Imagen Principal */
         .hero-visual {
             position: relative;
             display: flex;
@@ -267,7 +263,7 @@
             opacity: 0.7;
         }
 
-        /* --- SECCIÓN ANUNCIO / FICHA TÉCNICA (ANDES PILOTO) --- */
+        /* --- SECCIÓN ANUNCIO / FICHA TÉCNICA --- */
         .pilot-ad {
             padding: 100px 2rem;
             background: linear-gradient(180deg, #ffffff 0%, #fbf8ef 100%);
@@ -333,7 +329,7 @@
             color: var(--text-muted);
         }
 
-        /* Lightbox para ver la ficha técnica a detalle */
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -369,7 +365,7 @@
             font-family: var(--font-title);
         }
 
-        /* --- SECCIÓN HISTORIA (CÓMO SE LOGRÓ) --- */
+        /* --- SECCIÓN HISTORIA --- */
         .story {
             padding: 100px 2rem;
             background-color: #ffffff;
@@ -443,7 +439,6 @@
             margin: 0 auto;
         }
 
-        /* Pestañas de selección para cambiar de bebida */
         .tabs-container {
             display: flex;
             justify-content: center;
@@ -488,13 +483,12 @@
             color: white;
         }
 
-        /* Contenido interactivo del producto */
         .product-display {
             background: white;
             border-radius: 24px;
             padding: 3.5rem;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
-            display: none; /* Se maneja con JS */
+            display: none;
             grid-template-columns: 1.1fr 1.1fr;
             gap: 4rem;
             align-items: center;
@@ -549,7 +543,6 @@
             color: #495057;
         }
 
-        /* --- MARCO DE EXHIBICIÓN DE LA ETIQUETA --- */
         .prod-media {
             display: flex;
             justify-content: center;
@@ -767,9 +760,9 @@
     <!-- Menú de Navegación -->
     <header>
         <div class="nav-container">
-            <!-- Miniatura del logotipo en la barra de navegación -->
             <a href="#inicio" class="logo-nav">
-                <img src="Vértice.png" alt="Vertex Energy Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <!-- Nombre corregido a Vertex.png -->
+                <img src="Vertex.png" alt="Vertex Energy Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <span class="logo-fallback-text">Vertex Energy</span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
@@ -785,12 +778,12 @@
         </div>
     </header>
 
-    <!-- Sección de Portada (Hero con Logotipo Protagonista) -->
+    <!-- Sección de Portada -->
     <section class="hero" id="inicio">
         <div class="hero-container">
             <div class="hero-content">
-                <!-- Logotipo integrado estratégicamente antes del título principal -->
-                <img src="Vértice.png" alt="Vertex Energy Logo" class="brand-logo-main" onerror="this.style.display='none';">
+                <!-- Nombre corregido a Vertex.png -->
+                <img src="Vertex.png" alt="Vertex Energy Logo" class="brand-logo-main" onerror="this.style.display='none';">
 
                 <h1>Innovación y Energía que Revalorizan los Andes</h1>
                 <p>En Vertex Energy fusionamos la ciencia, la economía circular y la riqueza natural andina para crear soluciones nutricionales de alto impacto social y ambiental.</p>
@@ -802,14 +795,14 @@
                     <svg viewBox="0 0 24 24" id="placeholderIcon">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"/>
                     </svg>
-                    <p id="placeholderText">Espacio para tu render principal<br><span style="font-size: 0.8rem; opacity: 0.7; display: block; margin-top: 8px;">Guarda tu imagen como "suero-nutri.png"</span></p>
-                    <img id="productImg" class="product-image" src="suero-nutri.png" alt="Suero-Nutri Energy Drink">
+                    <p id="placeholderText">Espacio para tu render principal<br><span style="font-size: 0.8rem; opacity: 0.7; display: block; margin-top: 8px;">Guarda tu imagen como "piloto.png"</span></p>
+                    <img id="productImg" class="product-image" src="piloto.png" alt="Suero-Nutri Energy Drink">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Anuncio / Ficha Técnica: pieza publicitaria de Andes a tamaño completo -->
+    <!-- Sección Ficha Técnica / Piloto -->
     <section class="pilot-ad" id="ficha-tecnica">
         <div class="pilot-ad-container">
             <div class="pilot-ad-header">
@@ -819,17 +812,17 @@
             </div>
 
             <div class="pilot-ad-frame" id="pilotAdFrame" role="button" tabindex="0" aria-label="Ampliar ficha técnica de Andes">
-                <img src="piloto.png" alt="Ficha técnica de Suero-Nutri Andes: composición (70% base láctea, 22% extracto de aguaymanto, 8% infusión de muña, miel de abeja de Chiquián) y proceso de elaboración en 4 pasos.">
+                <img src="piloto.png" alt="Ficha técnica de Suero-Nutri Andes">
                 <span class="pilot-ad-zoom-hint">🔍 Ver a detalle</span>
             </div>
             <p class="pilot-ad-caption">Toca o haz clic en la imagen para explorar cada cifra y paso del proceso.</p>
         </div>
     </section>
 
-    <!-- Lightbox para ver la ficha técnica en tamaño completo -->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
-        <img src="piloto.png" alt="Ficha técnica de Suero-Nutri Andes ampliada">
+        <img src="piloto.png" alt="Ficha técnica ampliada">
     </div>
 
     <!-- Sección ¿Cómo se logró? -->
@@ -864,7 +857,7 @@
                 Explora el poder y el sabor de cada una de nuestras tres variedades inspiradas en la riqueza andina.
             </p>
 
-            <!-- Pestañas de Selección -->
+            <!-- Pestañas -->
             <div class="tabs-container" role="tablist">
                 <button class="tab-btn active" data-product="andes" role="tab" aria-selected="true">ANDES</button>
                 <button class="tab-btn" data-product="frost" role="tab" aria-selected="false">FROST</button>
@@ -877,7 +870,7 @@
                     <div class="label-frame-container bg-andes-subtle" id="container-andes">
                         <div class="floating-badge badge-andes">🍊</div>
                         <div class="label-fallback" id="fallback-andes">
-                            <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>andes.png</strong> aquí</span>
+                            <span class="label-fallback-text">Cargando etiqueta <strong>andes.png</strong>...</span>
                         </div>
                         <img class="actual-label-img" id="img-andes" src="andes.png" alt="Etiqueta Suero-Nutri Andes">
                     </div>
@@ -899,9 +892,10 @@
                     <div class="label-frame-container bg-frost-subtle" id="container-frost">
                         <div class="floating-badge badge-frost">🍃</div>
                         <div class="label-fallback" id="fallback-frost">
-                            <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>frost.png</strong> aquí</span>
+                            <span class="label-fallback-text">Cargando etiqueta <strong>frost.png</strong>...</span>
                         </div>
-                        <img class="actual-label-img" id="img-frost" src="escarcha.png" alt="Etiqueta Suero-Nutri Frost">
+                        <!-- Nombre corregido a frost.png -->
+                        <img class="actual-label-img" id="img-frost" src="frost.png" alt="Etiqueta Suero-Nutri Frost">
                     </div>
                 </div>
                 <div class="prod-info">
@@ -921,15 +915,16 @@
                     <div class="label-frame-container bg-wild-subtle" id="container-wild">
                         <div class="floating-badge badge-wild">🐝</div>
                         <div class="label-fallback" id="fallback-wild">
-                            <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>wild.png</strong> aquí</span>
+                            <span class="label-fallback-text">Cargando etiqueta <strong>wild.png</strong>...</span>
                         </div>
-                        <img class="actual-label-img" id="img-wild" src="salvaje.png" alt="Etiqueta Suero-Nutri Wild">
+                        <!-- Nombre corregido a wild.png -->
+                        <img class="actual-label-img" id="img-wild" src="wild.png" alt="Etiqueta Suero-Nutri Wild">
                     </div>
                 </div>
                 <div class="prod-info">
                     <h3>WILD</h3>
                     <p class="prod-tagline">Energía pura y silvestre</p>
-                    <p class="prod-description">¡Fuerza rústica y silvestre! Bebida energizante natural endulzada con la auténtica miel de abeja recolectada en Chiquián. Combina la fuerza natural del campo con una hidratación profunda, ideal para entrenamientos intensos y un rendimiento máximo.</p>
+                    <p class="prod-description">¡Fuerza rústica y silvestre! Bebida energizante natural endulzada con la auténtica miel de abeja recolectada en Chiquián. Combina la fuerza natural del campo con una hidratación profunda.</p>
                     <div class="ingredients-box">
                         <h4>Ingredientes Clave:</h4>
                         <p>Miel de abeja pura, lactosuero dulce, extracto de aguaymanto, infusión de muña.</p>
@@ -947,123 +942,118 @@
             <div class="feature-card">
                 <div class="feature-icon">🌱</div>
                 <h3>Sostenibilidad Activa</h3>
-                <p>Revalorizamos subproductos alimenticios locales para evitar el impacto ambiental en los ríos y cuencas andinas, dándoles una segunda vida nutritiva.</p>
+                <p>Revalorizamos subproductos alimenticios locales para evitar el impacto ambiental en las cuencas andinas.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
                 <h3>Energía Natural</h3>
-                <p>Desarrollamos bebidas funcionales diseñadas para potenciar tu rendimiento diario utilizando la fuerza pura de los ingredientes autóctonos de Chiquián.</p>
+                <p>Bebidas funcionales diseñadas para potenciar tu rendimiento con ingredientes autóctonos de Chiquián.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔬</div>
                 <h3>Ciencia Aplicada</h3>
-                <p>Respaldamos cada uno de nuestros procesos con estándares rigurosos de biotecnología para asegurar la máxima absorción de nutrientes.</p>
+                <p>Procesos rigurosos de biotecnología para asegurar la máxima absorción de nutrientes.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pie de página -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Vertex Energy. Todos los derechos reservados. | Chiquián, Bolognesi, Áncash - Perú.</p>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
-        // --- 1. INTERACTIVIDAD DE PESTAÑAS (BEBIDAS) ---
+        // Navegación móvil
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+                navToggle.classList.toggle('open');
+            });
+        }
+
+        // Pestañas de productos
         const tabs = document.querySelectorAll('.tab-btn');
         const displays = document.querySelectorAll('.product-display');
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
                 displays.forEach(d => d.classList.remove('active'));
 
                 tab.classList.add('active');
                 tab.setAttribute('aria-selected', 'true');
-
+                
                 const targetProduct = tab.getAttribute('data-product');
                 document.getElementById(`prod-${targetProduct}`).classList.add('active');
             });
         });
 
-        // --- 2. DETECCIÓN AUTOMÁTICA DE IMÁGENES ---
+        // Carga de imágenes
         function setupImageDetection(imgId, fallbackId) {
             const img = document.getElementById(imgId);
             const fallback = document.getElementById(fallbackId);
 
-            img.onload = function() {
-                fallback.style.display = 'none';
-                img.style.display = 'block';
-            };
+            if (img) {
+                if (img.complete && img.naturalHeight !== 0) {
+                    fallback.style.display = 'none';
+                    img.style.display = 'block';
+                } else {
+                    img.onload = function() {
+                        fallback.style.display = 'none';
+                        img.style.display = 'block';
+                    };
+                }
+            }
         }
 
         setupImageDetection('img-andes', 'fallback-andes');
         setupImageDetection('img-frost', 'fallback-frost');
         setupImageDetection('img-wild', 'fallback-wild');
 
-        // Imagen de portada
+        // Imagen principal Hero
         const mainImg = document.getElementById('productImg');
         const mainIcon = document.getElementById('placeholderIcon');
         const mainText = document.getElementById('placeholderText');
         const mainContainer = document.getElementById('imageContainer');
 
-        mainImg.onload = function() {
-            mainIcon.style.display = 'none';
-            mainText.style.display = 'none';
-            mainContainer.style.border = 'none';
-            mainContainer.style.background = 'transparent';
-            mainContainer.style.boxShadow = 'none';
-            mainImg.style.display = 'block';
-        };
+        if (mainImg) {
+            function showMainImg() {
+                if (mainIcon) mainIcon.style.display = 'none';
+                if (mainText) mainText.style.display = 'none';
+                if (mainContainer) {
+                    mainContainer.style.border = 'none';
+                    mainContainer.style.background = 'transparent';
+                    mainContainer.style.boxShadow = 'none';
+                }
+                mainImg.style.display = 'block';
+            }
 
-        // --- 3. MENÚ MÓVIL ---
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
+            if (mainImg.complete && mainImg.naturalHeight !== 0) {
+                showMainImg();
+            } else {
+                mainImg.onload = showMainImg;
+            }
+        }
 
-        navToggle.addEventListener('click', () => {
-            const isOpen = navMenu.classList.toggle('open');
-            navToggle.classList.toggle('open', isOpen);
-            navToggle.setAttribute('aria-expanded', isOpen);
-        });
-
-        navMenu.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('open');
-                navToggle.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // --- 4. LIGHTBOX DE LA FICHA TÉCNICA (ANUNCIO ANDES) ---
-        const pilotAdFrame = document.getElementById('pilotAdFrame');
+        // Lightbox para la Ficha Técnica
+        const pilotFrame = document.getElementById('pilotAdFrame');
         const lightbox = document.getElementById('lightbox');
         const lightboxClose = document.getElementById('lightboxClose');
 
-        function openLightbox() {
-            lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
+        if (pilotFrame && lightbox) {
+            pilotFrame.addEventListener('click', () => lightbox.classList.add('open'));
+            lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) lightbox.classList.remove('open');
+            });
         }
-
-        function closeLightbox() {
-            lightbox.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        pilotAdFrame.addEventListener('click', openLightbox);
-        pilotAdFrame.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openLightbox();
-            }
-        });
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
     </script>
 </body>
 </html>
