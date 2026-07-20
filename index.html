@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
- 
+
     <style>
         /* --- VARIABLES DE DISEÑO --- */
         :root {
@@ -18,28 +18,28 @@
             --bg-light: #f8f9fa;       /* Fondo gris limpio */
             --text-dark: #212529;      /* Texto principal */
             --text-muted: #6c757d;     /* Texto secundario */
- 
+
             /* Colores temáticos de las bebidas de tus etiquetas */
             --color-andes: #f4d160;    /* Amarillo Aguaymanto */
             --color-frost: #a8dadc;    /* Azul/Celeste Muña */
             --color-wild: #b07d62;     /* Marrón/Miel rústico */
- 
+
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Open Sans', sans-serif;
             --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
- 
+
         /* --- ESTILOS GLOBALES --- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
- 
+
         html {
             scroll-behavior: smooth;
         }
- 
+
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
@@ -47,22 +47,22 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
- 
+
         h1, h2, h3 {
             font-family: var(--font-title);
             color: var(--primary-dark);
         }
- 
+
         a:focus-visible,
         button:focus-visible {
             outline: 3px solid var(--accent-green);
             outline-offset: 3px;
         }
- 
+
         img {
             max-width: 100%;
         }
- 
+
         /* --- HEADER & NAVEGACIÓN --- */
         header {
             position: fixed;
@@ -73,7 +73,7 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
- 
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -82,20 +82,20 @@
             justify-content: space-between;
             align-items: center;
         }
- 
+
         /* Reemplazamos el texto del logo por la imagen en miniatura */
         .logo-nav {
             display: flex;
             align-items: center;
             height: 40px;
         }
- 
+
         .logo-nav img {
             height: 100%;
             width: auto;
             object-fit: contain;
         }
- 
+
         /* Texto de respaldo si el logo aún no se ha añadido */
         .logo-nav .logo-fallback-text {
             display: none;
@@ -105,14 +105,14 @@
             color: var(--primary-dark);
             letter-spacing: 0.5px;
         }
- 
+
         .nav-menu {
             display: flex;
             gap: 2rem;
             list-style: none;
             align-items: center;
         }
- 
+
         .nav-link {
             text-decoration: none;
             color: var(--text-dark);
@@ -120,11 +120,11 @@
             font-size: 0.95rem;
             transition: var(--transition-smooth);
         }
- 
+
         .nav-link:hover {
             color: var(--accent-green);
         }
- 
+
         .nav-toggle {
             display: none;
             flex-direction: column;
@@ -136,7 +136,7 @@
             border: none;
             cursor: pointer;
         }
- 
+
         .nav-toggle span {
             display: block;
             width: 100%;
@@ -145,11 +145,11 @@
             border-radius: 2px;
             transition: var(--transition-smooth);
         }
- 
+
         .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .nav-toggle.open span:nth-child(2) { opacity: 0; }
         .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
- 
+
         /* --- SECCIÓN HERO (PORTADA CON LOGO PROTAGONISTA) --- */
         .hero {
             padding: 160px 2rem 100px;
@@ -158,7 +158,7 @@
             display: flex;
             align-items: center;
         }
- 
+
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -167,11 +167,11 @@
             gap: 4rem;
             align-items: center;
         }
- 
+
         .hero-content {
             text-align: left;
         }
- 
+
         /* Estilo para el gran logotipo protagonista */
         .brand-logo-main {
             max-width: 280px;
@@ -181,13 +181,13 @@
             display: block;
             animation: floatLogo 4s ease-in-out infinite;
         }
- 
+
         @keyframes floatLogo {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
         }
- 
+
         .hero-content h1 {
             font-size: 3.2rem;
             line-height: 1.15;
@@ -195,14 +195,14 @@
             letter-spacing: -1px;
             font-weight: 800;
         }
- 
+
         .hero-content p {
             font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
             max-width: 550px;
         }
- 
+
         .cta-btn {
             display: inline-block;
             background-color: var(--accent-green);
@@ -218,13 +218,13 @@
             box-shadow: 0 10px 20px rgba(45, 122, 76, 0.2);
             transition: var(--transition-smooth);
         }
- 
+
         .cta-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 25px rgba(45, 122, 76, 0.3);
             background-color: #24613c;
         }
- 
+
         /* Contenedor de la Imagen Principal */
         .hero-visual {
             position: relative;
@@ -232,7 +232,7 @@
             justify-content: center;
             align-items: center;
         }
- 
+
         .image-placeholder {
             width: 100%;
             aspect-ratio: 4/5;
@@ -251,14 +251,14 @@
             transition: var(--transition-smooth);
             overflow: hidden;
         }
- 
+
         .product-image {
             width: 100%;
             height: 100%;
             object-fit: contain;
             display: none;
         }
- 
+
         .image-placeholder svg {
             width: 64px;
             height: 64px;
@@ -266,30 +266,30 @@
             fill: var(--primary-light);
             opacity: 0.7;
         }
- 
+
         /* --- SECCIÓN ANUNCIO / FICHA TÉCNICA (ANDES PILOTO) --- */
         .pilot-ad {
             padding: 100px 2rem;
             background: linear-gradient(180deg, #ffffff 0%, #fbf8ef 100%);
         }
- 
+
         .pilot-ad-container {
             max-width: 1180px;
             margin: 0 auto;
             text-align: center;
         }
- 
+
         .pilot-ad-header {
             max-width: 700px;
             margin: 0 auto 3rem;
         }
- 
+
         .pilot-ad-header p {
             color: var(--text-muted);
             font-size: 1.05rem;
             margin-top: 1rem;
         }
- 
+
         .pilot-ad-frame {
             position: relative;
             border-radius: 20px;
@@ -298,18 +298,18 @@
             border: 1px solid rgba(0, 0, 0, 0.06);
             cursor: zoom-in;
         }
- 
+
         .pilot-ad-frame img {
             display: block;
             width: 100%;
             height: auto;
             transition: var(--transition-smooth);
         }
- 
+
         .pilot-ad-frame:hover img {
             transform: scale(1.015);
         }
- 
+
         .pilot-ad-zoom-hint {
             position: absolute;
             bottom: 18px;
@@ -326,13 +326,13 @@
             gap: 6px;
             pointer-events: none;
         }
- 
+
         .pilot-ad-caption {
             margin-top: 1.25rem;
             font-size: 0.9rem;
             color: var(--text-muted);
         }
- 
+
         /* Lightbox para ver la ficha técnica a detalle */
         .lightbox {
             display: none;
@@ -344,18 +344,18 @@
             justify-content: center;
             padding: 3rem 1.5rem;
         }
- 
+
         .lightbox.open {
             display: flex;
         }
- 
+
         .lightbox img {
             max-width: 100%;
             max-height: 92vh;
             border-radius: 12px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
- 
+
         .lightbox-close {
             position: absolute;
             top: 24px;
@@ -368,18 +368,18 @@
             cursor: pointer;
             font-family: var(--font-title);
         }
- 
+
         /* --- SECCIÓN HISTORIA (CÓMO SE LOGRÓ) --- */
         .story {
             padding: 100px 2rem;
             background-color: #ffffff;
         }
- 
+
         .story-container {
             max-width: 1000px;
             margin: 0 auto;
         }
- 
+
         .story-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -387,13 +387,13 @@
             align-items: center;
             margin-top: 3rem;
         }
- 
+
         .story-text p {
             color: var(--text-muted);
             margin-bottom: 1.5rem;
             font-size: 1.05rem;
         }
- 
+
         .story-badge {
             display: inline-block;
             background-color: rgba(45, 122, 76, 0.1);
@@ -405,7 +405,7 @@
             margin-bottom: 1rem;
             text-transform: uppercase;
         }
- 
+
         .story-visual-card {
             background: linear-gradient(135deg, var(--primary-dark) 0%, #1a4a8f 100%);
             color: white;
@@ -413,36 +413,36 @@
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(15, 44, 89, 0.15);
         }
- 
+
         .story-visual-card h3 {
             color: white;
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
- 
+
         .story-visual-card ul {
             list-style: none;
             margin-top: 1.5rem;
         }
- 
+
         .story-visual-card li {
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
- 
+
         /* --- SECCIÓN PRODUCTOS / INGREDIENTES --- */
         .products-section {
             padding: 100px 2rem;
             background-color: var(--bg-light);
         }
- 
+
         .products-container {
             max-width: 1100px;
             margin: 0 auto;
         }
- 
+
         /* Pestañas de selección para cambiar de bebida */
         .tabs-container {
             display: flex;
@@ -451,7 +451,7 @@
             margin-bottom: 3.5rem;
             flex-wrap: wrap;
         }
- 
+
         .tab-btn {
             background: white;
             border: 2px solid #dee2e6;
@@ -464,30 +464,30 @@
             transition: var(--transition-smooth);
             color: var(--text-muted);
         }
- 
+
         .tab-btn:hover {
             border-color: var(--primary-light);
             color: var(--primary-dark);
         }
- 
+
         .tab-btn.active[data-product="andes"] {
             background-color: var(--color-andes);
             border-color: var(--color-andes);
             color: #4a3300;
         }
- 
+
         .tab-btn.active[data-product="frost"] {
             background-color: var(--color-frost);
             border-color: var(--color-frost);
             color: #1a4d4f;
         }
- 
+
         .tab-btn.active[data-product="wild"] {
             background-color: var(--color-wild);
             border-color: var(--color-wild);
             color: white;
         }
- 
+
         /* Contenido interactivo del producto */
         .product-display {
             background: white;
@@ -499,42 +499,42 @@
             gap: 4rem;
             align-items: center;
         }
- 
+
         .product-display.active {
             display: grid;
             animation: fadeIn 0.5s ease;
         }
- 
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
- 
+
         .prod-info h3 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
- 
+
         .prod-tagline {
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--accent-green);
             margin-bottom: 1.5rem;
         }
- 
+
         .prod-description {
             color: var(--text-muted);
             font-size: 1.05rem;
             margin-bottom: 2rem;
         }
- 
+
         .ingredients-box {
             background-color: var(--bg-light);
             padding: 1.5rem;
             border-radius: 12px;
             border-left: 4px solid var(--accent-green);
         }
- 
+
         .ingredients-box h4 {
             font-family: var(--font-title);
             font-size: 1rem;
@@ -543,12 +543,12 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
- 
+
         .ingredients-box p {
             font-size: 0.95rem;
             color: #495057;
         }
- 
+
         /* --- MARCO DE EXHIBICIÓN DE LA ETIQUETA --- */
         .prod-media {
             display: flex;
@@ -557,7 +557,7 @@
             position: relative;
             width: 100%;
         }
- 
+
         .label-frame-container {
             width: 100%;
             max-width: 440px;
@@ -574,7 +574,7 @@
             transition: var(--transition-smooth);
             overflow: hidden;
         }
- 
+
         .floating-badge {
             position: absolute;
             top: 15px;
@@ -591,11 +591,11 @@
             border: 2px solid white;
             transition: var(--transition-smooth);
         }
- 
+
         .badge-andes { background-color: var(--color-andes); }
         .badge-frost { background-color: var(--color-frost); }
         .badge-wild { background-color: var(--color-wild); }
- 
+
         .label-fallback {
             display: flex;
             flex-direction: column;
@@ -607,11 +607,11 @@
             padding: 1.5rem;
             z-index: 2;
         }
- 
+
         .label-fallback-text strong {
             color: var(--primary-dark);
         }
- 
+
         .actual-label-img {
             max-width: 100%;
             max-height: 100%;
@@ -622,27 +622,27 @@
             z-index: 5;
             transition: var(--transition-smooth);
         }
- 
+
         .bg-andes-subtle { background: radial-gradient(circle, rgba(244, 209, 96, 0.12) 0%, rgba(255, 255, 255, 1) 85%); }
         .bg-frost-subtle { background: radial-gradient(circle, rgba(168, 218, 220, 0.18) 0%, rgba(255, 255, 255, 1) 85%); }
         .bg-wild-subtle { background: radial-gradient(circle, rgba(176, 125, 98, 0.12) 0%, rgba(255, 255, 255, 1) 85%); }
- 
+
         /* --- SECCIÓN VALORES --- */
         .features {
             padding: 100px 2rem;
             background-color: #ffffff;
         }
- 
+
         .section-title {
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 4rem;
         }
- 
+
         .section-title span {
             color: var(--accent-green);
         }
- 
+
         .features-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -650,7 +650,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
- 
+
         .feature-card {
             background-color: var(--bg-light);
             padding: 3rem 2rem;
@@ -659,12 +659,12 @@
             transition: var(--transition-smooth);
             border: 1px solid rgba(0, 0, 0, 0.02);
         }
- 
+
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
- 
+
         .feature-icon {
             display: inline-flex;
             align-items: center;
@@ -677,17 +677,17 @@
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
- 
+
         .feature-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
         }
- 
+
         .feature-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
         }
- 
+
         /* --- FOOTER --- */
         footer {
             background-color: var(--primary-dark);
@@ -695,12 +695,12 @@
             padding: 40px 2rem;
             text-align: center;
         }
- 
+
         footer p {
             font-size: 0.9rem;
             opacity: 0.8;
         }
- 
+
         /* --- RESPONSIVIDAD --- */
         @media (max-width: 968px) {
             .hero-container, .story-grid, .product-display {
@@ -708,12 +708,12 @@
                 text-align: center;
                 gap: 3rem;
             }
- 
+
             .brand-logo-main { margin: 0 auto 1.5rem; }
             .hero-content h1 { font-size: 2.5rem; }
             .hero-content p { margin: 0 auto 2.5rem; }
             .image-placeholder { margin: 0 auto; }
- 
+
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -725,33 +725,33 @@
                 gap: 0;
                 box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
             }
- 
+
             .nav-menu.open {
                 display: flex;
             }
- 
+
             .nav-menu li {
                 width: 100%;
                 text-align: center;
             }
- 
+
             .nav-menu .nav-link {
                 display: block;
                 padding: 1rem;
             }
- 
+
             .nav-toggle {
                 display: flex;
             }
- 
+
             .pilot-ad { padding: 70px 1.25rem; }
             .pilot-ad-zoom-hint { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
- 
+
             .product-display { padding: 2.5rem 1.5rem; }
             .ingredients-box { text-align: left; }
             .label-frame-container { margin: 0 auto; }
         }
- 
+
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.001ms !important;
@@ -763,13 +763,13 @@
     </style>
 </head>
 <body>
- 
+
     <!-- Menú de Navegación -->
     <header>
         <div class="nav-container">
             <!-- Miniatura del logotipo en la barra de navegación -->
             <a href="#inicio" class="logo-nav">
-                <img src="Vertex.png" alt="Vertex Energy Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="Vértice.png" alt="Vertex Energy Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <span class="logo-fallback-text">Vertex Energy</span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
@@ -784,19 +784,19 @@
             </ul>
         </div>
     </header>
- 
+
     <!-- Sección de Portada (Hero con Logotipo Protagonista) -->
     <section class="hero" id="inicio">
         <div class="hero-container">
             <div class="hero-content">
                 <!-- Logotipo integrado estratégicamente antes del título principal -->
-                <img src="Vertex.png" alt="Vertex Energy Logo" class="brand-logo-main" onerror="this.style.display='none';">
- 
+                <img src="Vértice.png" alt="Vertex Energy Logo" class="brand-logo-main" onerror="this.style.display='none';">
+
                 <h1>Innovación y Energía que Revalorizan los Andes</h1>
                 <p>En Vertex Energy fusionamos la ciencia, la economía circular y la riqueza natural andina para crear soluciones nutricionales de alto impacto social y ambiental.</p>
                 <a href="#ficha-tecnica" class="cta-btn">Conocer Suero-Nutri</a>
             </div>
- 
+
             <div class="hero-visual">
                 <div class="image-placeholder" id="imageContainer">
                     <svg viewBox="0 0 24 24" id="placeholderIcon">
@@ -808,7 +808,7 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Sección Anuncio / Ficha Técnica: pieza publicitaria de Andes a tamaño completo -->
     <section class="pilot-ad" id="ficha-tecnica">
         <div class="pilot-ad-container">
@@ -817,21 +817,21 @@
                 <h2>Cada detalle de Andes, a la vista</h2>
                 <p>Desde el origen del lactosuero hasta la mezcla final: así construimos nuestra primera bebida energizante láctea con aguaymanto y muña.</p>
             </div>
- 
+
             <div class="pilot-ad-frame" id="pilotAdFrame" role="button" tabindex="0" aria-label="Ampliar ficha técnica de Andes">
-                <img src="andes-piloto.png" alt="Ficha técnica de Suero-Nutri Andes: composición (70% base láctea, 22% extracto de aguaymanto, 8% infusión de muña, miel de abeja de Chiquián) y proceso de elaboración en 4 pasos.">
+                <img src="piloto.png" alt="Ficha técnica de Suero-Nutri Andes: composición (70% base láctea, 22% extracto de aguaymanto, 8% infusión de muña, miel de abeja de Chiquián) y proceso de elaboración en 4 pasos.">
                 <span class="pilot-ad-zoom-hint">🔍 Ver a detalle</span>
             </div>
             <p class="pilot-ad-caption">Toca o haz clic en la imagen para explorar cada cifra y paso del proceso.</p>
         </div>
     </section>
- 
+
     <!-- Lightbox para ver la ficha técnica en tamaño completo -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
-        <img src="andes-piloto.png" alt="Ficha técnica de Suero-Nutri Andes ampliada">
+        <img src="piloto.png" alt="Ficha técnica de Suero-Nutri Andes ampliada">
     </div>
- 
+
     <!-- Sección ¿Cómo se logró? -->
     <section class="story" id="como-se-logro">
         <div class="story-container">
@@ -855,7 +855,7 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Sección Suero-Nutri (Productos) -->
     <section class="products-section" id="suero-nutri">
         <div class="products-container">
@@ -863,14 +863,14 @@
             <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
                 Explora el poder y el sabor de cada una de nuestras tres variedades inspiradas en la riqueza andina.
             </p>
- 
+
             <!-- Pestañas de Selección -->
             <div class="tabs-container" role="tablist">
                 <button class="tab-btn active" data-product="andes" role="tab" aria-selected="true">ANDES</button>
                 <button class="tab-btn" data-product="frost" role="tab" aria-selected="false">FROST</button>
                 <button class="tab-btn" data-product="wild" role="tab" aria-selected="false">WILD</button>
             </div>
- 
+
             <!-- Producto 1: Andes -->
             <div class="product-display active" id="prod-andes">
                 <div class="prod-media">
@@ -892,7 +892,7 @@
                     </div>
                 </div>
             </div>
- 
+
             <!-- Producto 2: Frost -->
             <div class="product-display" id="prod-frost">
                 <div class="prod-media">
@@ -901,7 +901,7 @@
                         <div class="label-fallback" id="fallback-frost">
                             <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>frost.png</strong> aquí</span>
                         </div>
-                        <img class="actual-label-img" id="img-frost" src="frost.png" alt="Etiqueta Suero-Nutri Frost">
+                        <img class="actual-label-img" id="img-frost" src="escarcha.png" alt="Etiqueta Suero-Nutri Frost">
                     </div>
                 </div>
                 <div class="prod-info">
@@ -914,7 +914,7 @@
                     </div>
                 </div>
             </div>
- 
+
             <!-- Producto 3: Wild -->
             <div class="product-display" id="prod-wild">
                 <div class="prod-media">
@@ -923,7 +923,7 @@
                         <div class="label-fallback" id="fallback-wild">
                             <span class="label-fallback-text">Arrastra o guarda tu etiqueta como<br><strong>wild.png</strong> aquí</span>
                         </div>
-                        <img class="actual-label-img" id="img-wild" src="wild.png" alt="Etiqueta Suero-Nutri Wild">
+                        <img class="actual-label-img" id="img-wild" src="salvaje.png" alt="Etiqueta Suero-Nutri Wild">
                     </div>
                 </div>
                 <div class="prod-info">
@@ -936,10 +936,10 @@
                     </div>
                 </div>
             </div>
- 
+
         </div>
     </section>
- 
+
     <!-- Sostenibilidad -->
     <section class="features" id="sostenibilidad">
         <h2 class="section-title">Pilares de <span>Sostenibilidad</span></h2>
@@ -961,52 +961,52 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Vertex Energy. Todos los derechos reservados. | Chiquián, Bolognesi, Áncash - Perú.</p>
     </footer>
- 
+
     <!-- JAVASCRIPT -->
     <script>
         // --- 1. INTERACTIVIDAD DE PESTAÑAS (BEBIDAS) ---
         const tabs = document.querySelectorAll('.tab-btn');
         const displays = document.querySelectorAll('.product-display');
- 
+
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
                 displays.forEach(d => d.classList.remove('active'));
- 
+
                 tab.classList.add('active');
                 tab.setAttribute('aria-selected', 'true');
- 
+
                 const targetProduct = tab.getAttribute('data-product');
                 document.getElementById(`prod-${targetProduct}`).classList.add('active');
             });
         });
- 
+
         // --- 2. DETECCIÓN AUTOMÁTICA DE IMÁGENES ---
         function setupImageDetection(imgId, fallbackId) {
             const img = document.getElementById(imgId);
             const fallback = document.getElementById(fallbackId);
- 
+
             img.onload = function() {
                 fallback.style.display = 'none';
                 img.style.display = 'block';
             };
         }
- 
+
         setupImageDetection('img-andes', 'fallback-andes');
         setupImageDetection('img-frost', 'fallback-frost');
         setupImageDetection('img-wild', 'fallback-wild');
- 
+
         // Imagen de portada
         const mainImg = document.getElementById('productImg');
         const mainIcon = document.getElementById('placeholderIcon');
         const mainText = document.getElementById('placeholderText');
         const mainContainer = document.getElementById('imageContainer');
- 
+
         mainImg.onload = function() {
             mainIcon.style.display = 'none';
             mainText.style.display = 'none';
@@ -1015,17 +1015,17 @@
             mainContainer.style.boxShadow = 'none';
             mainImg.style.display = 'block';
         };
- 
+
         // --- 3. MENÚ MÓVIL ---
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navMenu');
- 
+
         navToggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('open');
             navToggle.classList.toggle('open', isOpen);
             navToggle.setAttribute('aria-expanded', isOpen);
         });
- 
+
         navMenu.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
@@ -1033,22 +1033,22 @@
                 navToggle.setAttribute('aria-expanded', 'false');
             });
         });
- 
+
         // --- 4. LIGHTBOX DE LA FICHA TÉCNICA (ANUNCIO ANDES) ---
         const pilotAdFrame = document.getElementById('pilotAdFrame');
         const lightbox = document.getElementById('lightbox');
         const lightboxClose = document.getElementById('lightboxClose');
- 
+
         function openLightbox() {
             lightbox.classList.add('open');
             document.body.style.overflow = 'hidden';
         }
- 
+
         function closeLightbox() {
             lightbox.classList.remove('open');
             document.body.style.overflow = '';
         }
- 
+
         pilotAdFrame.addEventListener('click', openLightbox);
         pilotAdFrame.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -1056,7 +1056,7 @@
                 openLightbox();
             }
         });
- 
+
         lightboxClose.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) closeLightbox();
